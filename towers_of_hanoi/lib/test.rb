@@ -15,4 +15,16 @@ class Array
         end
         positions
     end
+
+    def my_transpose
+        transpose = []
+        self.each_with_index do |row, i1|
+            new_row = []
+            (0...self.length).each do |i2|
+                new_row << self[i2][i1]  
+            end
+            transpose << new_row
+        end
+        transpose
+    end
 end

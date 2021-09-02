@@ -28,9 +28,7 @@ describe Array do
         it "will convert between the row-oriented and column-oriented representations" do
             test1_in = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
             test1_out = [[0, 3, 6],[1, 4, 7],[2, 5, 8]]
-            test2_in = [[0, 1, 2],[3, 4, 5],[6, 7, 8]]
-            test2_out = [[0, 3, 6],[1, 4, 7],[2, 5, 8]]
-            
+            expect(test1_in.my_transpose).to eq(test1_out)    
         end
     end
 
