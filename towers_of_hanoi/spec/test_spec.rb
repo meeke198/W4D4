@@ -33,5 +33,17 @@ describe Array do
     end
 
 
+    describe "#stock_picker" do
+    
+        it "outputs the most profitable pair of days on which to first buy the stock and then sell the stock" do
+            expect([100, 200, 400, 500].stock_picker).to eq([0,3])
+        end
 
+        it "sell after buying" do
+            buy_day, sell_day = [30, 5, 2, 1, 4].stock_picker
+            expect(sell_day).to be > buy_day
+        end
+
+
+    end
 end

@@ -27,4 +27,21 @@ class Array
         end
         transpose
     end
+
+
+    def stock_picker
+        max_profit = 0
+        days = []
+        self.each_with_index do |price1, day1|
+
+            self.each_with_index do |price2, day2|
+                if day2 > day1 && price2 - price1 > max_profit
+                    max_profit = price2 - price1
+                    days = [day1, day2]
+                end
+            end
+
+        end
+        days
+    end
 end
