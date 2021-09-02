@@ -1,6 +1,6 @@
 class Disk
-    def initialize
-        @towers = Array.new(3){Array.new()} #[[4, 3, 2, 1], [], []]
-        @towers[0] = []
+    attr_reader :value
+    def initialize(value)
+        @value = value
     end
 end

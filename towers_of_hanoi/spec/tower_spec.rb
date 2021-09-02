@@ -1,9 +1,17 @@
 require "tower"
+
 describe Towers do
-    subject(:towers) {Towers.new()}
+    subject(:game) {Towers.new()}
+    let(:disk1) { double("Disk", :value => 1) }
+    let(:disk2) { double("Disk", :value => 2) }
+    let(:disk3) { double("Disk", :value => 3) }
+    let(:disk4) { double("Disk", :value => 4) }
+
 
     describe "#initialize" do
-        it "should set @towers, where first tower has 4 discs and two others are empty"
+        it "should set @towers, where first tower has 4 discs and two others are empty" do
+            expect(game.show_towers).to eq([[4, 3, 2, 1], [], []])
+        end
 
         it "should set tower to 2D array where inner arrays are distinct"
     
@@ -53,7 +61,7 @@ describe Towers do
         it "should add disc to the top of a given tower"
     end
 
-    describe "#remove_disc"
+    describe "#remove_disc" do
         it "should accept an index and disc as argument"
 
         it "should remove disc from the top of a given tower"
